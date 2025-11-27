@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag-chat-storage
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=jdbc:postgresql://db:5432/ragchat
+      - PGHOST=db
+      - PGPORT=5432
+      - PGDATABASE=ragchat
+      - PGUSER=postgres
+      - PGPASSWORD=postgres
+      - API_KEY=${API_KEY:-your-secure-api-key-here}
+      - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-*}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - ragchat-network
+    restart: unless-stopped
+
+  db:
+    image: postgres:15-alpine
+    container_name: rag-chat-db
+    environment:
+      - POSTGRES_DB=ragchat
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - ragchat-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  adminer:
+    image: adminer:latest
+    container_name: rag-chat-adminer
+    ports:
+      - "8080:8080"
+    networks:
+      - ragchat-network
+    depends_on:
+      - db
+    restart: unless-stopped
+
+networks:
+  ragchat-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
