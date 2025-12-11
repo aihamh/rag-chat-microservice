@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import javax.sql.DataSource;
 import java.net.URI;
@@ -13,6 +14,7 @@ import java.net.URISyntaxException;
 
 @Slf4j
 @Configuration
+@Profile("!test")
 public class DataSourceConfig {
 
     @Value("${DATABASE_URL:}")
@@ -43,8 +45,9 @@ public class DataSourceConfig {
 
                 String host = dbUri.getHost();
                 int port = dbUri.getPort() == -1 ? 5432 : dbUri.getPort();
-                String database = dbUri.getPath() != null && dbUri.getPath().length() > 1 
-                        ? dbUri.getPath().substring(1) : pgDatabase;
+                String database = dbUri.getPath() != null && dbUri.getPath().length() > 1
+                        ? dbUri.getPath().substring(1)
+                        : pgDatabase;
                 String query = dbUri.getQuery();
 
                 String jdbcUrl = String.format("jdbc:postgresql://%s:%d/%s", host, port, database);

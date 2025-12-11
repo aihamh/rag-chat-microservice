@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   app:
     build:
@@ -15,7 +13,7 @@ services:
       - PGDATABASE=ragchat
       - PGUSER=postgres
       - PGPASSWORD=postgres
-      - API_KEY=${API_KEY:-your-secure-api-key-here}
+      - API_KEY=RAG-Chat-Secure-v1_2025-Demo-t2xPzYj8wH6rLqK
       - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-*}
     depends_on:
       db:
@@ -34,11 +32,11 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "5433:5432"
     networks:
       - ragchat-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
       interval: 10s
       timeout: 5s
       retries: 5
