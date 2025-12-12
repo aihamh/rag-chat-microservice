@@ -157,7 +157,7 @@ A dedicated microservice that provides:
 
 3. **Set your API key:**
    ```bash
-   export API_KEY="RAG-Chat-Secure-v1_2025-Demo-t2xPzYj8wH6rLqK"
+   export API_KEY="API_KEY"
    ```
 
 4. **Open these tabs in browser:**
