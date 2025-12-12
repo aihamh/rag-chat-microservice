@@ -1,9 +1,9 @@
-# 🎯 RAG Chat Microservice Overview
+#  RAG Chat Microservice Overview
 
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 1. [Project Overview](#project-overview)
 2. [Architecture Highlights](#architecture-highlights)
@@ -16,7 +16,7 @@
 
 ---
 
-## 🎯 Project Overview
+##  Project Overview
 
 ### Intro
 *A production-ready backend microservice designed to store and manage chat histories for RAG-based chatbot systems. It's built with Java 17 and Spring Boot 3.2, featuring enterprise-grade security, rate limiting, comprehensive API documentation, and full containerization support.*
@@ -39,7 +39,7 @@ A dedicated microservice that provides:
 
 ---
 
-## 🏗️ Architecture Highlights
+## Architecture Highlights
 
 ### **Layered Architecture**
 ```
@@ -70,7 +70,7 @@ A dedicated microservice that provides:
 
 ---
 
-## 💻 Technology Stack
+##  Technology Stack
 
 ### **Backend Framework**
 - **Java 17**: Latest LTS version with modern features
@@ -100,7 +100,7 @@ A dedicated microservice that provides:
 
 ---
 
-## ✨ Key Features to Showcase
+##  Key Features to Showcase
 
 ### **1. Complete Session Management**
 - ✅ Create new chat sessions
@@ -167,7 +167,7 @@ A dedicated microservice that provides:
 
 ---
 
-## 🚀 API Demonstrations
+##  API Demonstrations
 
 ### **Demo 1: Health Checks** (No Auth Required)
 
@@ -475,7 +475,7 @@ ORDER BY s.created_at DESC;
 
 ---
 
-## 🔍 Technical Deep Dive Points
+##  Technical Deep Dive Points
 
 ### **1. Data Model Design**
 
@@ -655,7 +655,7 @@ mvn test
 ---
 
 ## 
-## ✅ Pre-Demo Checklist
+##  Pre-Demo Checklist
 
 - [ ] Application running: `docker-compose up -d`
 - [ ] Services healthy: `docker-compose ps`
@@ -669,7 +669,7 @@ mvn test
 
 ---
 
-## 🔗 Quick Reference Links
+##  Quick Reference Links
 
 | Resource | URL |
 |----------|-----|
@@ -678,7 +678,7 @@ mvn test
 | API Docs JSON | http://localhost:5000/v3/api-docs |
 | Health Check | http://localhost:5000/api/v1/health |
 | Adminer (DB UI) | http://localhost:8080 |
-| GitHub Repo | *(Add your repo link)* |
+| 
 
 ---
 
