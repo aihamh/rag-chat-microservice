@@ -1,4 +1,4 @@
-# 🎯 RAG Chat Microservice - Demo Presentation Guide
+# 🎯 RAG Chat Microservice Overview
 
 
 ---
@@ -19,7 +19,7 @@
 ## 🎯 Project Overview
 
 ### Intro
-*"A production-ready backend microservice designed to store and manage chat histories for RAG-based chatbot systems. It's built with Java 17 and Spring Boot 3.2, featuring enterprise-grade security, rate limiting, comprehensive API documentation, and full containerization support."*
+*A production-ready backend microservice designed to store and manage chat histories for RAG-based chatbot systems. It's built with Java 17 and Spring Boot 3.2, featuring enterprise-grade security, rate limiting, comprehensive API documentation, and full containerization support.*
 
 ### **Problem Statement**`
 RAG (Retrieval-Augmented Generation) chatbots need a reliable way to:
